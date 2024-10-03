@@ -2,6 +2,11 @@
 
 import { useEffect, useState } from 'react'
 import { WebApp } from '@twa-dev/types'
+import Hamster from './icons/Hamster';
+import Mine from './icons/Mine';
+import Friends from './icons/Friends';
+import Coins from './icons/Coins';
+
 
 declare global {
   interface Window {
@@ -82,8 +87,30 @@ export default function Home() {
   if (!user) return <div className="container mx-auto p-4">Loading...</div>
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="bg-black flex justify-center">
+       <div className="w-full bg-black text-white h-screen font-bold flex flex-col max-w-xl"></div>
+       <div className="px-4 z-10">
+          <div className="flex items-center space-x-2 pt-4">
+            <div className="p-1 rounded-lg bg-[#1d2025]">
+              <Hamster size={24} className="text-[#d4d4d4]" />
+            </div>
+            <div>
+              <p className="text-sm">{user.firstName} (CEO)</p>
+            </div>
+          </div>
+      
+ 
       <h1 className="text-2xl font-bold mb-4">Welcome To Rafi coin, {user.firstName}!</h1>
+
+     
+      <div className="px-4 mt-4 flex justify-center">
+              <div className="px-4 py-2 flex items-center space-x-2">
+                
+                <p className="text-4xl text-white">{user.points}</p>
+              </div>
+            </div>
+     
+      
       <p>Your current points: {user.points}</p>
       <button
         onClick={handleIncreasePoints}
@@ -96,6 +123,28 @@ export default function Home() {
           {notification}
         </div>
       )}
+
+      {/* Bottom fixed div */}
+      <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-[calc(100%-2rem)] max-w-xl bg-[#272a2f] flex justify-around items-center z-50 rounded-3xl text-xs">
+        <div className="text-center text-[#85827d] w-1/5 bg-[#1c1f24] m-1 p-2 rounded-2xl">
+          
+          <p className="mt-1">Exchange</p>
+        </div>
+        <div className="text-center text-[#85827d] w-1/5">
+          <Mine className="w-8 h-8 mx-auto" />
+          <p className="mt-1">Mine</p>
+        </div>
+        <div className="text-center text-[#85827d] w-1/5">
+          <Friends className="w-8 h-8 mx-auto" />
+          <p className="mt-1">Friends</p>
+        </div>
+        <div className="text-center text-[#85827d] w-1/5">
+          <Coins className="w-8 h-8 mx-auto" />
+          <p className="mt-1">Earn</p>
+        </div>
+      
+      </div>
+      </div>
     </div>
   )
 }
