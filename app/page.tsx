@@ -99,9 +99,8 @@ export default function Home() {
             </div>
           </div>
       
- 
+          <div className="flex items-center justify-between space-x-4 mt-1"></div>
 
-     
            <div className="px-4 mt-4 flex justify-center">
               <div className="px-4 py-2 flex items-center space-x-2">
                 
@@ -110,19 +109,19 @@ export default function Home() {
            
      
       
-       <button
-        onClick={handleIncreasePoints}
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-        >
-        Increase Points
-       </button>
-       {notification && (
-        <div className="mt-4 p-2 bg-green-100 text-green-700 rounded">
-          {notification}
-        </div>
-       )}
-       </div>
-     
+              <button
+             onClick={handleIncreasePoints}
+             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+             >
+              Increase Points
+              </button>
+             {notification && (
+              <div className="mt-4 p-2 bg-green-100 text-green-700 rounded">
+              {notification}
+              </div>
+             )}
+           </div>
+          
 
       {/* Bottom fixed div */}
       <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-[calc(100%-2rem)] max-w-xl bg-[#272a2f] flex justify-around items-center z-50 rounded-3xl text-xs">
