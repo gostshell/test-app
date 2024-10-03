@@ -100,7 +100,6 @@ export default function Home() {
           </div>
       
  
-      <h1 className="text-2xl font-bold mb-4">Welcome To Rafi coin, {user.firstName}!</h1>
 
      
       <div className="px-4 mt-4 flex justify-center">
