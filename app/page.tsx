@@ -110,18 +110,18 @@ export default function Home() {
             </div>
      
       
-      <p>Your current points: {user.points}</p>
-      <button
+       <button
         onClick={handleIncreasePoints}
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-      >
+        >
         Increase Points
-      </button>
-      {notification && (
+       </button>
+       {notification && (
         <div className="mt-4 p-2 bg-green-100 text-green-700 rounded">
           {notification}
         </div>
-      )}
+       )}
+      </div>
 
       {/* Bottom fixed div */}
       <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-[calc(100%-2rem)] max-w-xl bg-[#272a2f] flex justify-around items-center z-50 rounded-3xl text-xs">
