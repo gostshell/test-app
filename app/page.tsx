@@ -102,12 +102,12 @@ export default function Home() {
  
 
      
-      <div className="px-4 mt-4 flex justify-center">
+           <div className="px-4 mt-4 flex justify-center">
               <div className="px-4 py-2 flex items-center space-x-2">
                 
                 <p className="text-4xl text-white">{user.points}</p>
               </div>
-            </div>
+           
      
       
        <button
@@ -121,7 +121,8 @@ export default function Home() {
           {notification}
         </div>
        )}
-      </div>
+       </div>
+     
 
       {/* Bottom fixed div */}
       <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-[calc(100%-2rem)] max-w-xl bg-[#272a2f] flex justify-around items-center z-50 rounded-3xl text-xs">
