@@ -165,7 +165,7 @@ export default function Home() {
           </div>
 
           <div className="px-4 mt-4 flex justify-center">
-              <div className="w-80 h-80 p-4 rounded-full circle-outer">
+              <div className="w-50 h-50 p-4 rounded-full circle-outer">
                 <div className="w-full h-full rounded-full circle-inner">
                 <button
             onClick={handleIncreasePoints}
@@ -208,10 +208,6 @@ export default function Home() {
       <div className="text-center text-[#85827d] w-1/5">
         <Coins className="w-8 h-8 mx-auto" />
         <p className="mt-1">Earn</p>
-      </div>
-      <div className="text-center text-[#85827d] w-1/5">
-        
-        <p className="mt-1">Airdrop</p>
       </div>
     </div>
 
