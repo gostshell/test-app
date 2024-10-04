@@ -89,7 +89,7 @@ export default function Home() {
   return (
     <div className="bg-black flex justify-center">
        <div className="w-full bg-black text-white h-screen font-bold flex flex-col max-w-xl"></div>
-       <div className="px-4 z-10">
+        <div className="px-4 z-10">
           <div className="flex items-center space-x-2 pt-4">
             <div className="p-1 rounded-lg bg-[#1d2025]">
               <Hamster size={24} className="text-[#d4d4d4]" />
@@ -98,6 +98,20 @@ export default function Home() {
               <p className="text-sm">{user.firstName} (CEO)</p>
             </div>
           </div>
+
+          <div className="flex items-center w-1/3">
+              <div className="w-full">
+                <div className="flex justify-between">
+                  <p className="text-sm">h</p>
+                  <p className="text-sm">no <span className="text-[#95908a]">/</span></p>
+                </div>
+                <div className="flex items-center mt-1 border-2 border-[#43433b] rounded-full">
+                  <div className="w-full h-2 bg-[#43433b]/[0.6] rounded-full">
+                    <div className="progress-gradient h-2 rounded-full" ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
       
           <div className="flex items-center justify-between space-x-4 mt-1"></div>
 
@@ -123,8 +137,8 @@ export default function Home() {
            </div>
           
 
-      {/* Bottom fixed div */}
-      <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-[calc(100%-2rem)] max-w-xl bg-[#272a2f] flex justify-around items-center z-50 rounded-3xl text-xs">
+       {/* Bottom fixed div */}
+       <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-[calc(100%-2rem)] max-w-xl bg-[#272a2f] flex justify-around items-center z-50 rounded-3xl text-xs">
         <div className="text-center text-[#85827d] w-1/5 bg-[#1c1f24] m-1 p-2 rounded-2xl">
           
           <p className="mt-1">Exchange</p>
