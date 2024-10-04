@@ -1,5 +1,5 @@
 'use client'
-
+import './globals.css';
 import { useEffect, useState } from 'react'
 import { WebApp } from '@twa-dev/types'
 import Hamster from './icons/Hamster';
