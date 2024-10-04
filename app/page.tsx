@@ -1,5 +1,4 @@
 'use client'
-import './globals.css';
 import { useEffect, useState } from 'react'
 import { WebApp } from '@twa-dev/types'
 import Hamster from './icons/Hamster';
@@ -8,6 +7,7 @@ import Friends from './icons/Friends';
 import Coins from './icons/Coins';
 import Info from './icons/Info';
 import Settings from './icons/Settings';
+import { useRouter } from 'next/router'
 
 
 declare global {
@@ -22,6 +22,8 @@ export default function Home() {
   const [user, setUser] = useState<any>(null)
   const [error, setError] = useState<string | null>(null)
   const [notification, setNotification] = useState('')
+
+  const router = useRouter()
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.Telegram?.WebApp) {
@@ -123,7 +125,7 @@ export default function Home() {
               <p className="text-xs text-[#85827d] font-medium">Profit per hour</p>
               <div className="flex items-center justify-center space-x-1">
                 
-                <p className="text-sm"></p>
+                <p className="text-sm">222.1k</p>
                 <Info size={20} className="text-[#43433b]" />
               </div>
             </div>
@@ -191,7 +193,7 @@ export default function Home() {
       </div>
       <div className="text-center text-[#85827d] w-1/5">
         <Mine className="w-8 h-8 mx-auto" />
-        <p className="mt-1">Mine</p>
+        <p onClick={() => router.push('/mine/')} className="mt-1">Mine</p>
       </div>
       <div className="text-center text-[#85827d] w-1/5">
         <Friends className="w-8 h-8 mx-auto" />
