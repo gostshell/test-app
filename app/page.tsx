@@ -143,18 +143,9 @@ export default function Home() {
     return `${paddedHours}:${paddedMinutes}`;
   };
 
-  useEffect(() => {
-    const updateCountdowns = () => {
-      setDailyRewardTimeLeft(calculateTimeLeft(0));
-      setDailyCipherTimeLeft(calculateTimeLeft(19));
-      setDailyComboTimeLeft(calculateTimeLeft(12));
-    };
 
-    updateCountdowns();
-    const interval = setInterval(updateCountdowns, 60000); // Update every minute
 
-    return () => clearInterval(interval);
-  }, []);
+   
 
   const handleCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const card = e.currentTarget;
@@ -184,15 +175,7 @@ export default function Home() {
     return Math.min(progress, 100);
   };
 
-  useEffect(() => {
-    const currentLevelMin = levelMinPoints[levelIndex];
-    const nextLevelMin = levelMinPoints[levelIndex + 1];
-    if (points >= nextLevelMin && levelIndex < levelNames.length - 1) {
-      setLevelIndex(levelIndex + 1);
-    } else if (points < currentLevelMin && levelIndex > 0) {
-      setLevelIndex(levelIndex - 1);
-    }
-  }, [points, levelIndex, levelMinPoints, levelNames.length]);
+
 
   const formatProfitPerHour = (profit: number) => {
     if (profit >= 1000000000) return `+${(profit / 1000000000).toFixed(2)}B`;
@@ -201,13 +184,7 @@ export default function Home() {
     return `+${profit}`;
   };
 
-  useEffect(() => {
-    const pointsPerSecond = Math.floor(profitPerHour / 3600);
-    const interval = setInterval(() => {
-      setPoints(prevPoints => prevPoints + pointsPerSecond);
-    }, 1000);
-    return () => clearInterval(interval);
-  }, [profitPerHour]);
+ 
 
   return (
 
@@ -230,11 +207,8 @@ export default function Home() {
                 <p className="text-sm">{levelNames[levelIndex]}</p>
                 <p className="text-sm">{levelIndex + 1} <span className="text-[#95908a]">/ {levelNames.length}</span></p>
               </div>
-              <div className="flex items-center mt-1 border-2 border-[#43433b] rounded-full">
-                <div className="w-full h-2 bg-[#43433b]/[0.6] rounded-full">
-                  <div className="progress-gradient h-2 rounded-full" style={{ width: `${calculateProgress()}%` }}></div>
-                </div>
-              </div>
+          
+
             </div>
           </div>
           <div className="flex items-center w-2/3 border-2 border-[#43433b] rounded-full px-4 py-[2px] bg-[#43433b]/[0.6] max-w-64">
@@ -277,23 +251,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="px-4 mt-4 flex justify-center">
-            <div className="px-4 py-2 flex items-center space-x-2">
-             
-              <p className="text-4xl text-white">{points.toLocaleString()}</p>
-            </div>
-          </div>
-
-          <div className="px-4 mt-4 flex justify-center">
-            <div
-              className="w-80 h-80 p-4 rounded-full circle-outer"
-              onClick={handleCardClick}
-            >
-              <div className="w-full h-full rounded-full circle-inner">
-               
-              </div>
-            </div>
-          </div>
+      
         </div>
       </div>
     </div>
@@ -343,20 +301,7 @@ export default function Home() {
       </div>
     </div>
 
-    {clicks.map((click) => (
-      <div
-        key={click.id}
-        className="absolute text-5xl font-bold opacity-0 text-white pointer-events-none"
-        style={{
-          top: `${click.y - 42}px`,
-          left: `${click.x - 28}px`,
-          animation: `float 1s ease-out`
-        }}
-        onAnimationEnd={() => handleAnimationEnd(click.id)}
-      >
-        {pointsToAdd}
-      </div>
-    ))}
+ 
   </div>
   )
 }
