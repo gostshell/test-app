@@ -7,7 +7,7 @@ import Friends from './icons/Friends';
 import Coins from './icons/Coins';
 import Info from './icons/Info';
 import Settings from './icons/Settings';
-import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 
 declare global {
@@ -23,7 +23,7 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null)
   const [notification, setNotification] = useState('')
 
-  const router = useRouter()
+
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.Telegram?.WebApp) {
@@ -193,7 +193,8 @@ export default function Home() {
       </div>
       <div className="text-center text-[#85827d] w-1/5">
         <Mine className="w-8 h-8 mx-auto" />
-        <p className="mt-1">Mine</p>
+        
+        <Link href="./mine/"> <p className="mt-1">Mine</p></Link>
       </div>
       <div className="text-center text-[#85827d] w-1/5">
         <Friends className="w-8 h-8 mx-auto" />
