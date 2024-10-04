@@ -1,7 +1,9 @@
+'use client'
+import { useEffect, useState } from 'react'
+import { WebApp } from '@twa-dev/types'
 
-
-export function Min() {
+export  function Mine() {
     return <div>mini</div>
   }
 
-  export default Min;
+  export default Mine

@@ -193,7 +193,7 @@ export default function Home() {
       </div>
       <div className="text-center text-[#85827d] w-1/5">
         <Mine className="w-8 h-8 mx-auto" />
-        <p onClick={() => router.push('/mine/')} className="mt-1">Mine</p>
+        <p className="mt-1">Mine</p>
       </div>
       <div className="text-center text-[#85827d] w-1/5">
         <Friends className="w-8 h-8 mx-auto" />
