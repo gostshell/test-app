@@ -72,7 +72,7 @@ export default function Home() {
       const data = await res.json()
       if (data.success) {
         setUser({ ...user, points: data.points })
-        setNotification('Points increased successfully!')
+        
         setTimeout(() => setNotification(''), 3000)
       } else {
         setError('Failed to increase points')
@@ -161,8 +161,7 @@ export default function Home() {
                
                <p className="text-4xl text-white">{user.points}</p>
              </div>
-          
-          </div>
+           </div>
 
           <div className="px-4 mt-4 flex justify-center">
               <div className="w-50 h-50 p-4 rounded-full circle-outer">
@@ -171,14 +170,9 @@ export default function Home() {
             onClick={handleIncreasePoints}
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
             >
-             Increase Points
+             Points
              </button>
 
-             {notification && (
-             <div className="mt-4 p-2 bg-green-100 text-green-700 rounded">
-             {notification}
-             </div>
-            )}
                  
                 </div>
               </div>
