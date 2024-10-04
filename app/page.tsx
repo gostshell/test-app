@@ -166,7 +166,10 @@ export default function Home() {
           <div className="px-4 mt-4 flex justify-center">
               <div className="w-50 h-50 p-4 rounded-full circle-outer" onClick={handleIncreasePoints}>
                 <div className="w-full h-full rounded-full circle-inner">
-                
+
+                <div className="w-full h-full rounded-full circle-inner">
+                  <Info className="w-full h-full" />
+                </div>
 
                  
                 </div>
